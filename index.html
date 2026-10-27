@@ -1,180 +1,29 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Africa University · Student Portfolio</title>
-<style>
-:root{--bg:#f3f1ec;--card:#fff;--ink:#1c2230;--mut:#6b7280;--line:#dcd8cf;--pri:#1d4ed8;--pri2:#dbe6ff;--dk:#1c2230;--ok:#dcf5e3;--okt:#14632f;--wn:#fdf0c4;--wnt:#7a4b00;--er:#fbdcdc;--ert:#9b1c1c;--sf:#efece6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171f;--card:#1d222d;--ink:#e8eaf0;--mut:#9aa3b2;--line:#323949;--pri:#7aa2ff;--pri2:#23325c;--dk:#e8eaf0;--ok:#15402a;--okt:#8fe3ae;--wn:#4a3a10;--wnt:#f3cf7a;--er:#4a1d1d;--ert:#f4a3a3;--sf:#252b38}}
-:root[data-theme="dark"]{--bg:#14171f;--card:#1d222d;--ink:#e8eaf0;--mut:#9aa3b2;--line:#323949;--pri:#7aa2ff;--pri2:#23325c;--dk:#e8eaf0;--ok:#15402a;--okt:#8fe3ae;--wn:#4a3a10;--wnt:#f3cf7a;--er:#4a1d1d;--ert:#f4a3a3;--sf:#252b38}
-html,body{height:100%;margin:0}body{background:var(--bg);color:var(--ink);font:15px/1.45 Georgia,"Iowan Old Style",serif}
-button,input,select,textarea{font:inherit;color:inherit}
-h1,h2,h3,.sans,button,input,select,textarea,nav,label,table,.badge{font-family:"Segoe UI",system-ui,-apple-system,sans-serif}
-h1{font-size:26px;margin:0 0 4px}h2{font-size:18px;margin:0}h3{font-size:15px;margin:0}
-.top{display:flex;align-items:center;gap:10px;padding:10px 18px;background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
-.logo{font-family:Georgia,serif;font-weight:700;font-size:18px;display:flex;align-items:center;gap:8px}.logo i{width:26px;height:26px;border-radius:6px;background:var(--pri);display:inline-block}
-.sp{flex:1}.av{width:36px;height:36px;border-radius:50%;background:var(--pri2);color:var(--pri);display:grid;place-items:center;font:600 13px "Segoe UI",sans-serif;flex:none;overflow:hidden}.av.l{width:64px;height:64px;font-size:20px}
-.wrap{display:flex;min-height:calc(100% - 57px)}
-nav{width:190px;padding:14px 10px;border-right:1px solid var(--line);background:var(--card);flex:none}
-nav button{display:block;width:100%;text-align:left;border:0;background:none;padding:9px 12px;border-radius:8px;color:var(--mut);cursor:pointer;margin-bottom:2px}
-nav button.on{background:var(--pri2);color:var(--pri);font-weight:600}nav button:hover{background:var(--sf)}
-main{flex:1;padding:22px;max-width:1000px;min-width:0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:14px}
-.g{display:grid;gap:12px}.g3{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}.g2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.stat{background:var(--sf);border-radius:10px;padding:12px 14px}.stat b{display:block;font:600 28px Georgia,serif}.stat span{color:var(--mut);font:13px "Segoe UI",sans-serif}
-.btn{border:1px solid var(--line);background:var(--card);padding:7px 14px;border-radius:8px;cursor:pointer}.btn:hover{border-color:var(--ink)}
-.btn.p{background:var(--dk);color:var(--card);border-color:var(--dk)}.btn.s{padding:4px 10px;font-size:13px}
-.btn:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,nav button:focus-visible{outline:2px solid var(--pri);outline-offset:2px}
-input,select,textarea{width:100%;box-sizing:border-box;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:var(--card)}
-label{display:block;font-size:13px;color:var(--mut);margin:10px 0 4px}
-.badge{display:inline-block;font-size:12px;padding:2px 9px;border-radius:99px;background:var(--sf);color:var(--mut)}
-.b-ok{background:var(--ok);color:var(--okt)}.b-wn{background:var(--wn);color:var(--wnt)}.b-er{background:var(--er);color:var(--ert)}.b-in{background:var(--pri2);color:var(--pri)}
-.row{display:flex;align-items:center;gap:12px;padding:11px 0;border-top:1px solid var(--line)}.row:first-of-type{border-top:0}.row .f{flex:1;min-width:0}.row small,.mut{color:var(--mut)}
-.tabs{display:flex;gap:4px;background:var(--sf);padding:4px;border-radius:10px;margin:12px 0;overflow-x:auto}
-.tabs button{flex:1;border:0;background:none;padding:7px 12px;border-radius:7px;cursor:pointer;color:var(--mut);white-space:nowrap}.tabs button.on{background:var(--card);color:var(--ink);font-weight:600;box-shadow:0 0 0 1px var(--line)}
-.note{padding:10px 13px;border-radius:8px;margin:10px 0;font:14px "Segoe UI",sans-serif}
-table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;color:var(--mut);font-weight:500}td,th{padding:8px 6px;border-top:1px solid var(--line)}td.r,th.r{text-align:right}
-.bars{display:flex;gap:12px;align-items:flex-end;height:110px;margin-top:10px}.bars div{flex:1;text-align:center;font:12px "Segoe UI",sans-serif;color:var(--mut);display:flex;flex-direction:column;justify-content:flex-end;height:100%}
-.bars i{display:block;background:var(--pri);border-radius:6px 6px 0 0;margin-bottom:4px;opacity:.85}.bars i.e{background:none;border:1px dashed var(--line);height:100%!important}
-.pb{height:8px;background:var(--sf);border-radius:9px;overflow:hidden;margin:4px 0 12px}.pb i{display:block;height:100%;background:var(--pri)}
-.sw{width:38px;height:22px;border-radius:99px;background:var(--line);border:0;position:relative;cursor:pointer;padding:0}.sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:left .15s}.sw.on{background:var(--pri)}.sw.on::after{left:19px}.sw:disabled{opacity:.5;cursor:not-allowed}
-.dots button{border:0;background:none;font-size:20px;cursor:pointer;color:var(--ink);padding:0 2px}
-.auth{max-width:420px;margin:30px auto;padding:0 16px}
-#toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--dk);color:var(--card);padding:10px 18px;border-radius:9px;font:14px "Segoe UI",sans-serif;opacity:0;pointer-events:none;transition:opacity .2s;z-index:9}#toast.on{opacity:1}
-@media(max-width:720px){.wrap{flex-direction:column}nav{width:auto;display:flex;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:8px}nav button{white-space:nowrap;width:auto}main{padding:14px}}
-@media print{.top,nav,.noprint{display:none}}
-</style></head><body>
-<div id="app"></div><div id="toast" role="status"></div>
-<script>
-const $=s=>document.querySelector(s),G={'A':4,'A-':3.7,'B+':3.3,'B':3,'B-':2.7,'C+':2.3};
-const C={1:[[['ABC 101','Intro to Computing',3,'A'],['ABC 102','Academic Writing',3,'B+'],['ABC 103','Calculus I',4,'A-'],['ABC 104','Communication Skills',3,'B+'],['ABC 105','Principles of Economics',3,'A']],[['ABC 111','Data Structures',3,'A-'],['ABC 112','Statistics',3,'A'],['ABC 113','Calculus II',4,'B+'],['ABC 114','Ethics',3,'A-'],['ABC 115','Programming Lab',3,'A']]],
-2:[[['ABC 201','Course name',3,'A'],['ABC 202','Course name',3,'B+'],['ABC 203','Course name',4,'B'],['ABC 204','Course name',3,'A-'],['ABC 205','Course name',3,'B+']],[['ABC 211','Course name',3,'A-'],['ABC 212','Course name',3,'B'],['ABC 213','Course name',4,'B+'],['ABC 214','Course name',3,'B'],['ABC 215','Course name',3,'A']]]};
-const gpa=l=>{let c=0,p=0;l.forEach(x=>{c+=x[2];p+=x[2]*G[x[3]]});return c?p/c:0};
-const yg=y=>C[y]?gpa([].concat(...C[y])):0,cum=()=>gpa([].concat(...Object.values(C).flat()));
-let D={users:[{id:'20240123',em:'tendai.moyo@africau.edu',name:'Tendai Moyo',role:'Student',yr:2,fac:'Engineering',st:'Active',staff:'S-0045'},
-{id:'20240456',em:'chipo.ncube@africau.edu',name:'Chipo Ncube',role:'Student',yr:3,fac:'Business',st:'To confirm',cg:3.2,staff:'S-0045'},
-{id:'20240789',em:'farai.dube@africau.edu',name:'Farai Dube',role:'Student',yr:1,fac:'Engineering',st:'Active',cg:3.9,staff:'S-0045'},
-{id:'S-0045',em:'rudo.chikwanha@africau.edu',name:'Dr. Rudo Chikwanha',role:'Staff',fac:'Engineering',title:'Lecturer',st:'Active'},
-{id:'S-0067',em:'tafara.sibanda@africau.edu',name:'Mr. Tafara Sibanda',role:'Staff',fac:'Business',title:'Lecturer',st:'Suspended'},
-{id:'A-0001',em:'admin@africau.edu',name:'Admin Office',role:'Admin',st:'Active'}],
-ent:[{id:1,sid:'20240123',t:'ach',title:"Dean's list",yr:2,d:'Short description of the achievement goes here.',st:'Verified'},{id:2,sid:'20240123',t:'ach',title:'Best project award',yr:1,d:'Awarded for the final-year design showcase.',st:'Verified'},{id:3,sid:'20240123',t:'ach',title:'Hackathon finalist',yr:2,d:'Top five at the regional student hackathon.',file:'certificate.pdf',st:'Pending'},
-{id:4,sid:'20240123',t:'lead',title:'Class representative',yr:2,d:'Voice of 120 students.',st:'Verified'},{id:5,sid:'20240123',t:'lead',title:'Club secretary',yr:2,d:'Robotics club.',st:'Pending'},
-{id:6,sid:'20240123',t:'act',title:'Football team',yr:1,d:'Midfield, university league.',st:'Verified'},{id:7,sid:'20240123',t:'act',title:'Debate society',yr:2,d:'Weekly debates.',st:'Verified'}],
-let:[{id:1,sid:'20240123',to:'S-0045',pur:'Job application',by:'30 Sep',st:'Ready',on:'12 Sep 2026'},{id:2,sid:'20240123',to:'S-0067',pur:'Scholarship',by:'20 Oct',st:'Pending',on:'28 Sep 2026'},{id:3,sid:'20240456',to:'S-0045',pur:'Graduate school',by:'15 Oct',st:'Pending',on:'2 Sep 2026'}],
-com:[{sid:'20240123',by:'Dr. Rudo Chikwanha',on:'14 June 2026',t:'Strong progress this semester. Keep it up.'}],as:{'20240123':[4,3,5]},
-P:[['Portfolio'],['View own portfolio',1,0,0],['Add achievements, roles, activities',1,0,0],["View assigned students' portfolios",0,1,1],['Comment on and assess portfolios',0,1,0],['Verify student entries',0,1,0],['Certify grades and GPA',0,0,1],['Recommendation letters'],['Request a letter',1,0,0],['Write and send letters',0,1,0],['System'],['Create and manage accounts',0,0,'L'],['View dashboards and reports',0,0,'L']],
-log:['Staff account created for Dr. Rudo Chikwanha|Today, 09:12','Permissions changed for Engineering|Yesterday','Semester 1 grades certified|2 days ago']};
-D.users[0].cg=+cum().toFixed(1);
-const S={u:null,mode:'Student',pg:'',yr:2,tab:'ach',q:'',fy:'',fs:'',sel:null,ut:'All',add:0,su:0,stab:'Overview',theme:''};
-const ini=n=>n.replace(/^(Dr|Mr|Prof)\.? /,'').split(' ').map(x=>x[0]).join('').slice(0,2);
-const av=(n,c='')=>`<span class="av ${c}" aria-hidden="true">${ini(n)}</span>`;
-const bd=(s)=>{const m={Verified:'ok',Ready:'ok',Active:'ok',Pending:'wn','To confirm':'wn',Declined:'er',Suspended:'er'};return `<span class="badge b-${m[s]||'in'}">${s==='Verified'?'Verified by staff':s==='Pending'&&0?'':s==='Pending'?'Pending review':s}</span>`};
-const cert=()=>`<span class="badge b-ok">School certified</span>`;
-const tip=m=>{const t=$('#toast');t.textContent=m;t.className='on';clearTimeout(tip.t);tip.t=setTimeout(()=>t.className='',2200)};
-const U=id=>D.users.find(u=>u.id===id),go=(p,x={})=>{Object.assign(S,{pg:p},x);R()};
-const NAV={Student:[['dash','Dashboard'],['rec','Academic record'],['ach','Achievements'],['lead','Leadership'],['act','Activities'],['let','Letters'],['prof','My profile']],
-Staff:[['dash','Dashboard'],['stu','My students'],['ver','Verify entries'],['req','Letter requests'],['prof','My profile']],
-Admin:[['dash','Dashboard'],['usr','Users'],['perm','Permissions'],['rep','Reports'],['aud','Audit log']]};
-function login(){const f=$('#li').value.trim().toLowerCase(),p=$('#lp').value;
- const u=D.users.find(u=>(u.id.toLowerCase()===f||u.em===f)&&u.role===S.mode);
- if(!u)return tip('No '+S.mode.toLowerCase()+' account matches that email or ID.');
- if(p!=='demo1234')return tip('Wrong password. Demo password is demo1234.');
- if(u.st==='Suspended')return tip('This account is suspended. Contact your administrator.');
- S.u=u;go('dash',{tab:u.role==='Student'?'ach':'',sel:null})}
-function authView(){
- if(S.su)return `<div class="auth card"><h1>Create your student account</h1><p class="mut sans">Step ${S.su} of 2: ${S.su==1?'your details':'verify your email'}</p><div class="pb"><i style="width:${S.su*50}%"></i></div>
- ${S.su==1?`<label>School ID</label><input id="s1" placeholder="20240123"><label>School email</label><input id="s2" placeholder="name@school.edu"><label>Phone number</label><div style="display:flex;gap:8px"><select style="width:90px"><option>+263</option><option>+27</option><option>+260</option></select><input id="s3" placeholder="77 123 4567"></div><label>Create password</label><input id="s4" type="password" placeholder="At least 8 characters"><label>Confirm password</label><input id="s5" type="password" placeholder="Re-enter password"><label style="display:flex;gap:8px;align-items:center;color:var(--ink)"><input id="s6" type="checkbox" style="width:auto"> I agree to the terms and privacy policy</label><p><button class="btn p" style="width:100%" onclick="su1()">Continue</button></p>`
- :`<p class="sans">Enter the 6-digit code we sent to your school email. <span class="mut">(Demo code: 123456)</span></p><input id="s7" placeholder="123456" maxlength="6"><p><button class="btn p" style="width:100%" onclick="su2()">Verify and create account</button></p>`}
- <p class="sans" style="text-align:center">Already have an account? <a href="#" onclick="S.su=0;R();return false">Log in</a></p></div>`;
- return `<div class="auth"><div class="card"><h1 style="text-align:center">Welcome back</h1><p class="mut sans" style="text-align:center;margin-top:0">Log in to view your portfolio</p>
- <div class="tabs" role="tablist">${['Student','Staff','Admin'].map(m=>`<button class="${S.mode===m?'on':''}" onclick="S.mode='${m}';R()">${m}</button>`).join('')}</div>
- <label>School email or ID</label><input id="li" placeholder="name@school.edu" value="${{Student:'20240123',Staff:'S-0045',Admin:'admin@africau.edu'}[S.mode]}"><label>Password</label><input id="lp" type="password" value="demo1234" onkeydown="event.key==='Enter'&&login()">
- <p style="text-align:right;margin:6px 0"><a href="#" class="sans" onclick="tip('A reset link would be emailed to you.');return false">Forgot password?</a></p>
- <button class="btn p" style="width:100%" onclick="login()">Log in</button>
- ${S.mode==='Student'?'<p class="sans" style="text-align:center;margin-bottom:0">New student? <a href="#" onclick="S.su=1;R();return false">Create an account</a></p>':'<div class="note b-in">Staff and admin accounts are created by your administrator.</div>'}</div>
- <p class="mut sans" style="text-align:center;font-size:13px">Demo password for every account: demo1234</p></div>`}
-function su1(){const v=i=>$('#s'+i).value.trim();
- if(!v(1)||!/@/.test(v(2))||!v(3))return tip('Fill in school ID, a valid email and phone number.');
- if(v(4).length<8)return tip('Password needs at least 8 characters.');if(v(4)!==v(5))return tip('Passwords do not match.');
- if(!$('#s6').checked)return tip('Agree to the terms to continue.');if(U(v(1)))return tip('That school ID already has an account.');
- S.tmp={id:v(1),em:v(2).toLowerCase()};S.su=2;R()}
-function su2(){if($('#s7').value!=='123456')return tip('That code is not right. Try 123456.');
- D.users.push({id:S.tmp.id,em:S.tmp.em,name:'New Student '+S.tmp.id,role:'Student',yr:1,fac:'Unassigned',st:'To confirm',cg:0});S.su=0;S.mode='Student';tip('Account created. An administrator will confirm it.');R()}
-const me=()=>S.u.role==='Student'?S.u:U(S.sel);
-function entList(sid,t,staff){const f=D.ent.filter(e=>e.sid===sid&&e.t===t&&(!S.q||(e.title+e.d).toLowerCase().includes(S.q.toLowerCase()))&&(!S.fy||e.yr==S.fy)&&(!S.fs||e.st===S.fs));
- return f.length?f.map(e=>`<div class="row"><div class="f"><b class="sans">${e.title}</b> <small>Year ${e.yr}</small><br><span>${e.d}</span>${e.file?`<br><a href="#" class="sans" onclick="tip('Opening ${e.file} (demo)');return false">${e.file}</a>`:''}</div>${bd(e.st)}${staff&&e.st==='Pending'?`<button class="btn s" onclick="vr(${e.id},'Declined')">Reject</button><button class="btn s p" onclick="vr(${e.id},'Verified')">Verify</button>`:''}</div>`).join(''):'<p class="mut">No entries match. Try clearing the filters or add a new one.</p>'}
-function vr(id,s){D.ent.find(e=>e.id===id).st=s;D.log.unshift(`Entry ${s.toLowerCase()} by ${S.u.name}|Just now`);tip(s==='Verified'?'Entry verified.':'Entry declined.');R()}
-const LB={ach:'Achievements',lead:'Leadership',act:'Activities'};
-function studentDash(){const u=S.u,pend=D.ent.filter(e=>e.sid===u.id&&e.st==='Pending').length,L=D.let.filter(l=>l.sid===u.id);
- const top=t=>D.ent.filter(e=>e.sid===u.id&&e.t===t).slice(0,2).map(e=>e.title).join('<br>')||'<span class="mut">Nothing yet</span>';
- return `<div style="display:flex;gap:14px;align-items:center">${av(u.name,'l')}<div><h1>Welcome, ${u.name.split(' ')[0]}</h1><span class="mut sans">ID ${u.id} · Year ${u.yr} · ${u.fac}</span></div></div>
- <div class="g g3" style="margin:16px 0"><div class="stat"><span>Current GPA</span><b>${yg(2).toFixed(1)}</b><span>Semester 2, Year 2</span></div><div class="stat"><span>Cumulative GPA</span><b>${cum().toFixed(1)}</b>${cert()}</div><div class="stat"><span>Credits earned</span><b>64</b><span>of 128 required</span></div></div>
- <div class="card"><div style="display:flex"><h3>GPA by year</h3><span class="sp"></span><a href="#" class="sans" onclick="go('rec');return false">View full record</a></div><div class="bars">${[1,2,3,4].map(y=>`<div>${C[y]?`<i style="height:${yg(y)/4*100}%"></i>`:'<i class="e"></i>'}Year ${y}${C[y]?' · '+yg(y).toFixed(1):''}</div>`).join('')}</div></div>
- <div class="g g3">${['ach','lead','act'].map(t=>`<div class="card"><h3>${LB[t]}</h3><p>${top(t)}</p><a href="#" class="sans" onclick="go('${t}',{tab:'${t}'});return false">See all</a></div>`).join('')}</div>
- <div class="card" style="display:flex;align-items:center;gap:12px"><div class="f" style="flex:1"><h3>Recommendation letters</h3><span class="mut sans">${L.filter(l=>l.st==='Pending').length} pending · ${L.filter(l=>l.st==='Ready').length} ready to download${pend?` · ${pend} entries awaiting review`:''}</span></div><button class="btn p" onclick="go('let')">Request a letter</button></div>`}
-function recView(sid){const y=S.yr,c=C[y];return `<div style="display:flex;align-items:center"><h1>Academic record</h1><span class="sp"></span><button class="btn noprint" onclick="tip('Preparing stamped transcript…');setTimeout(print,400)">Download transcript</button></div>
- <div class="note b-ok">Grades are certified by the registrar's office. Last updated 15 June 2026.</div>
- <div class="tabs">${[1,2,3,4].map(n=>`<button class="${y===n?'on':''}" onclick="S.yr=${n};R()">Year ${n}</button>`).join('')}</div>
- ${c?`<div class="g g3"><div class="stat"><span>Semester 1 GPA</span><b>${gpa(c[0]).toFixed(1)}</b></div><div class="stat"><span>Semester 2 GPA</span><b>${gpa(c[1]).toFixed(1)}</b></div><div class="stat"><span>Cumulative GPA</span><b>${cum().toFixed(1)}</b></div></div>
- ${c.map((s,i)=>`<div class="card" style="margin-top:14px"><h3>Semester ${i+1}</h3><table><tr><th>Code</th><th>Course</th><th>Credits</th><th>Grade</th><th class="r">Points</th></tr>${s.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td class="r">${G[r[3]].toFixed(1)}</td></tr>`).join('')}</table></div>`).join('')}`:'<div class="card mut">No certified grades for this year yet.</div>'}`}
-function portfolio(){const t=S.tab;return `<div style="display:flex;align-items:center"><h1>My portfolio</h1><span class="sp"></span><button class="btn p" onclick="S.add=!S.add;R()">+ Add ${LB[t].replace(/ies$/,'y').replace(/s$/,'').toLowerCase()}</button></div>
- <div class="tabs">${Object.keys(LB).map(k=>`<button class="${t===k?'on':''}" onclick="S.tab='${k}';S.pg='${k}';S.add=0;R()">${LB[k]}</button>`).join('')}</div>
- ${S.add?`<div class="card"><h3>New entry</h3><label>Title</label><input id="at"><label>Year</label><select id="ay">${[1,2,3,4].map(y=>`<option>${y}</option>`).join('')}</select><label>Description</label><textarea id="ad" rows="2"></textarea><label>Attachment (optional)</label><input id="af" placeholder="e.g. certificate.pdf"><p><button class="btn p" onclick="addE()">Submit for review</button> <button class="btn" onclick="S.add=0;R()">Cancel</button></p></div>`:''}
- <div class="g" style="grid-template-columns:2fr 1fr 1fr"><input placeholder="Search entries" value="${S.q}" oninput="S.q=this.value;R(1)" id="sq"><select onchange="S.fy=this.value;R()"><option value="">All years</option>${[1,2,3,4].map(y=>`<option ${S.fy==y?'selected':''} value="${y}">Year ${y}</option>`).join('')}</select><select onchange="S.fs=this.value;R()"><option value="">All status</option><option ${S.fs==='Verified'?'selected':''} value="Verified">Verified</option><option ${S.fs==='Pending'?'selected':''} value="Pending">Pending</option></select></div>
- <div class="card" style="margin-top:12px">${entList(S.u.id,t)}</div>`}
-function addE(){const t=$('#at').value.trim();if(!t)return tip('Give the entry a title.');D.ent.push({id:Date.now(),sid:S.u.id,t:S.tab,title:t,yr:+$('#ay').value,d:$('#ad').value||'No description.',file:$('#af').value.trim()||null,st:'Pending'});S.add=0;tip('Submitted. Staff will review it.');R()}
-function letters(){const u=S.u,staff=D.users.filter(x=>x.role==='Staff'&&x.st==='Active'),L=D.let.filter(l=>l.sid===u.id);
- return `<h1>Recommendation letters</h1><div class="card"><h3>Request a new letter</h3><label>Choose a staff member</label><select id="lt">${staff.map(s=>`<option value="${s.id}">${s.name} · ${s.title}, ${s.fac}</option>`).join('')}</select>
- <div class="g g2"><div><label>What is it for?</label><select id="lp2"><option>Job application</option><option>Scholarship</option><option>Graduate school</option></select></div><div><label>Needed by</label><input type="date" id="ld"></div></div>
- <label>Message to staff member</label><textarea id="lm" rows="3" placeholder="Tell them about the role or program, and what you would like them to mention"></textarea><p style="display:flex;gap:10px;align-items:center"><input type="file" style="max-width:260px" aria-label="Attach CV"><span class="sp"></span><button class="btn p" onclick="reqL()">Send request</button></p></div>
- <div class="card"><div style="display:flex"><h3>My requests</h3><span class="sp"></span><span class="mut">${L.length} requests</span></div>${L.map(l=>`<div class="row"><div class="f"><b class="sans">${U(l.to).name} · ${l.pur}</b><br><small>Requested ${l.on} · needed by ${l.by}</small></div>${bd(l.st)}${l.st==='Ready'?`<button class="btn s" onclick="tip('Letter downloaded (demo).')">Download</button>`:l.st==='Pending'?`<button class="btn s" onclick="D.let=D.let.filter(x=>x.id!==${l.id});tip('Request cancelled.');R()">Cancel</button>`:`<button class="btn s" onclick="D.let.find(x=>x.id==${l.id}).st='Pending';R()">Request again</button>`}</div>`).join('')||'<p class="mut">No requests yet.</p>'}</div>`}
-function reqL(){const d=$('#ld').value;if(!d)return tip('Pick a deadline so staff know when you need it.');if(!$('#lm').value.trim())return tip('Add a short message for the staff member.');
- D.let.push({id:Date.now(),sid:S.u.id,to:$('#lt').value,pur:$('#lp2').value,by:d,st:'Pending',on:'2 Oct 2026'});tip('Request sent.');R()}
-function staffDash(){const u=S.u,ms=D.users.filter(x=>x.role==='Student'&&x.staff===u.id),sids=ms.map(x=>x.id),pe=D.ent.filter(e=>sids.includes(e.sid)&&e.st==='Pending'),pl=D.let.filter(l=>l.to===u.id&&l.st==='Pending'),q=S.q.toLowerCase();
- return `<div style="display:flex;gap:14px;align-items:center">${av(u.name,'l')}<div><h1>Welcome, ${u.name}</h1><span class="mut sans">${u.title} · ${u.fac}</span></div></div>
- <div class="g g3" style="margin:16px 0"><div class="stat"><span>My students</span><b>${ms.length}</b></div><div class="stat"><span>Entries to verify</span><b>${pe.length}</b></div><div class="stat"><span>Letter requests</span><b>${pl.length}</b></div></div>
- <div class="card"><h3>Needs your attention</h3>${pe.map(e=>`<div class="row">${av(U(e.sid).name)}<div class="f"><b class="sans">${U(e.sid).name}</b><br><small>Added ${LB[e.t].toLowerCase()}: ${e.title}</small></div><span class="badge b-wn">Verify</span><button class="btn s" onclick="go('stu',{sel:'${e.sid}',stab:'Overview'})">Review</button></div>`).join('')}
- ${pl.map(l=>`<div class="row">${av(U(l.sid).name)}<div class="f"><b class="sans">${U(l.sid).name}</b><br><small>Letter request for ${l.pur.toLowerCase()}, due ${l.by}</small></div><span class="badge b-in">Letter</span><button class="btn s" onclick="go('req')">Respond</button></div>`).join('')}${pe.length+pl.length?'':'<p class="mut">All caught up.</p>'}</div>
- <div class="card"><div style="display:flex"><h3>My students</h3><span class="sp"></span><input id="sq" style="max-width:200px" placeholder="Search name or ID" value="${S.q}" oninput="S.q=this.value;R(1)"></div><table><tr><th>Student</th><th>Year</th><th>Cum. GPA</th><th class="r">Portfolio</th></tr>${ms.filter(m=>!q||(m.name+m.id).toLowerCase().includes(q)).map(m=>`<tr><td>${m.name}</td><td>Year ${m.yr}</td><td>${m.cg.toFixed(1)}</td><td class="r"><a href="#" onclick="go('stu',{sel:'${m.id}',stab:'Overview'});return false">Open</a></td></tr>`).join('')}</table></div>`}
-function studentFile(){const s=U(S.sel),t=S.stab,a=D.as[s.id]||[0,0,0],tm={Achievements:'ach',Leadership:'lead',Activities:'act'};
- const body=t==='Overview'?`<div class="card"><h3>Waiting for verification</h3>${D.ent.filter(e=>e.sid===s.id&&e.st==='Pending').map(e=>`<div class="row"><div class="f"><b class="sans">${e.title}</b><br><small>${LB[e.t]} · Year ${e.yr}${e.file?' · '+e.file:''}</small></div><button class="btn s" onclick="vr(${e.id},'Declined')">Reject</button><button class="btn s p" onclick="vr(${e.id},'Verified')">Verify</button></div>`).join('')||'<p class="mut">Nothing waiting.</p>'}</div>
- <div class="g g2"><div class="card"><h3>Comments</h3><textarea id="cm" rows="2" placeholder="Write feedback for this student"></textarea><p><button class="btn" style="width:100%" onclick="addC()">Post comment</button></p>${D.com.filter(c=>c.sid===s.id).map(c=>`<div class="row"><div class="f">${c.t}<br><small>${c.by} · ${c.on}</small></div></div>`).join('')}</div>
- <div class="card"><h3>Assessment</h3>${['Academic progress','Leadership','Engagement'].map((n,i)=>`<div class="row sans"><div class="f">${n}</div>${[1,2,3,4,5].map(k=>`<button class="sw ${a[i]>=k?'on':''}" style="width:18px;height:18px;border-radius:50%" aria-label="${n} ${k}" onclick="(D.as['${s.id}']=D.as['${s.id}']||[0,0,0])[${i}]=${k};R()"></button>`).join('')}</div>`).join('')}<p><button class="btn p" style="width:100%" onclick="tip('Assessment saved.')">Save assessment</button></p></div></div>`
- :t==='Academic'?recView():`<div class="card">${entList(s.id,tm[t],1)}</div>`;
- return `<a href="#" class="sans" onclick="go('stu',{sel:null});return false">← Back to my students</a><div class="card" style="display:flex;gap:14px;align-items:center;margin-top:10px">${av(s.name,'l')}<div class="f" style="flex:1"><h1>${s.name}</h1><span class="mut sans">ID ${s.id} · Year ${s.yr} · ${s.fac}</span></div><div style="text-align:right"><span class="mut sans">Cumulative GPA</span><br><b style="font-size:28px">${s.cg.toFixed(1)}</b><br>${cert()}</div></div>
- <div class="tabs">${['Overview','Academic','Achievements','Leadership','Activities'].map(x=>`<button class="${t===x?'on':''}" onclick="S.stab='${x}';R()">${x}</button>`).join('')}</div>${body}`}
-function addC(){const t=$('#cm').value.trim();if(!t)return tip('Write a comment first.');D.com.unshift({sid:S.sel,by:S.u.name,on:'2 Oct 2026',t});tip('Comment posted.');R()}
-function verifyAll(){const sids=D.users.filter(x=>x.staff===S.u.id).map(x=>x.id),p=D.ent.filter(e=>sids.includes(e.sid)&&e.st==='Pending');
- return `<h1>Verify entries</h1><div class="card">${p.map(e=>`<div class="row">${av(U(e.sid).name)}<div class="f"><b class="sans">${e.title}</b><br><small>${U(e.sid).name} · ${LB[e.t]}${e.file?' · '+e.file:''}</small></div><button class="btn s" onclick="vr(${e.id},'Declined')">Reject</button><button class="btn s p" onclick="vr(${e.id},'Verified')">Verify</button></div>`).join('')||'<p class="mut">Nothing to verify.</p>'}</div>`}
-function reqAll(){const L=D.let.filter(l=>l.to===S.u.id);return `<h1>Letter requests</h1><div class="card">${L.map(l=>`<div class="row">${av(U(l.sid).name)}<div class="f"><b class="sans">${U(l.sid).name} · ${l.pur}</b><br><small>Needed by ${l.by}</small></div>${bd(l.st)}${l.st==='Pending'?`<button class="btn s" onclick="D.let.find(x=>x.id==${l.id}).st='Declined';R()">Decline</button><button class="btn s p" onclick="D.let.find(x=>x.id==${l.id}).st='Ready';tip('Letter sent to student.');R()">Write and send</button>`:''}</div>`).join('')||'<p class="mut">No requests.</p>'}</div>`}
-function adminDash(){const st=D.users.filter(u=>u.role==='Student').length,sf=D.users.filter(u=>u.role==='Staff').length,tc=D.users.filter(u=>u.st==='To confirm').length;
- return `<div style="display:flex;align-items:center"><h1>Administration</h1><span class="sp"></span><button class="btn p" onclick="go('usr',{add:1,ut:'Staff'})">+ Add staff account</button></div>
- <div class="g g3" style="margin:14px 0"><div class="stat"><span>Students</span><b>${(1237+st).toLocaleString()}</b></div><div class="stat"><span>Staff</span><b>${83+sf}</b></div><div class="stat"><span>Active this month</span><b>78%</b></div><div class="stat"><span>Open letter requests</span><b>${D.let.filter(l=>l.st==='Pending').length+31}</b></div></div>
- <div class="g g2"><div class="card"><h3>Portfolio completion by faculty</h3><div style="margin-top:10px">${[['Engineering',82],['Business',64],['Health Sciences',71],['Humanities',48]].map(f=>`<div class="sans" style="display:flex;justify-content:space-between"><span>${f[0]}</span><span>${f[1]}%</span></div><div class="pb"><i style="width:${f[1]}%"></i></div>`).join('')}</div></div>
- <div class="card"><h3>Needs attention</h3><div class="note b-wn">12 entries unverified for over 30 days</div><div class="note b-wn" style="cursor:pointer" onclick="go('usr',{ut:'Students'})">${tc} new student sign-up${tc>1?'s':''} to confirm</div><div class="note b-in">Grades for Semester 2 awaiting certification <a href="#" onclick="D.log.unshift('Semester 2 grades certified|Just now');tip('Semester 2 grades certified.');return false">Certify</a></div></div></div>
- <div class="card"><div style="display:flex"><h3>Recent activity</h3><span class="sp"></span><a href="#" class="sans" onclick="go('aud');return false">View audit log</a></div>${D.log.slice(0,3).map(l=>`<div class="row"><div class="f">${l.split('|')[0]}</div><small>${l.split('|')[1]}</small></div>`).join('')}</div>`}
-function users(){const q=S.q.toLowerCase(),r={Students:'Student',Staff:'Staff',Admins:'Admin'}[S.ut],L=D.users.filter(u=>(!r||u.role===r)&&(!S.fs||u.st===S.fs)&&(!q||(u.name+u.id+u.em).toLowerCase().includes(q)));
- return `<div style="display:flex;align-items:center"><h1>Users</h1><span class="sp"></span><button class="btn p" onclick="S.add=!S.add;R()">+ Add staff account</button></div>
- <div class="tabs">${['All','Students','Staff','Admins'].map(x=>`<button class="${S.ut===x?'on':''}" onclick="S.ut='${x}';R()">${x}</button>`).join('')}</div>
- <div class="g" style="grid-template-columns:3fr 1fr"><input id="sq" placeholder="Search by name, ID, or email" value="${S.q}" oninput="S.q=this.value;R(1)"><select onchange="S.fs=this.value;R()"><option value="">All status</option>${['Active','To confirm','Suspended'].map(s=>`<option ${S.fs===s?'selected':''}>${s}</option>`).join('')}</select></div>
- <div class="card" style="margin-top:12px;overflow-x:auto"><table><tr><th>Name</th><th>ID</th><th>Role</th><th>Status</th><th class="r">Actions</th></tr>${L.map(u=>`<tr><td>${u.name}</td><td>${u.id}</td><td>${u.role}</td><td>${bd(u.st)}</td><td class="r">${u.role==='Admin'?'':`${u.st==='To confirm'?`<button class="btn s" onclick="uSt('${u.id}','Active')">Confirm</button> `:''}<button class="btn s" onclick="uSt('${u.id}','${u.st==='Suspended'?'Active':'Suspended'}')">${u.st==='Suspended'?'Restore':'Suspend'}</button> <button class="btn s" onclick="tip('Reset link sent to ${u.em}')">Reset password</button>`}</td></tr>`).join('')}</table><p class="mut" style="margin-bottom:0">Showing ${L.length} of ${D.users.length}</p></div>
- ${S.add?`<div class="card"><h3>Add staff account</h3><div class="g g3"><div><label>Full name</label><input id="n1" placeholder="Dr. Staff name"></div><div><label>Staff ID</label><input id="n2" placeholder="S-0102"></div><div><label>School email</label><input id="n3" placeholder="name@school.edu"></div><div><label>Phone number</label><input id="n4" placeholder="77 123 4567"></div><div><label>Role</label><select id="n5"><option>Lecturer</option><option>Senior Lecturer</option><option>Professor</option></select></div><div><label>Faculty</label><select id="n6"><option value="">Select faculty</option><option>Engineering</option><option>Business</option><option>Health Sciences</option><option>Humanities</option></select></div></div>
- <div class="note b-in">A temporary password is emailed to the staff member. They must change it at first login.</div><button class="btn" onclick="S.add=0;R()">Cancel</button> <button class="btn p" onclick="addS()">Create account</button></div>`:''}`}
-function uSt(id,s){U(id).st=s;D.log.unshift(`${U(id).name} set to ${s}|Just now`);tip('Status updated.');R()}
-function addS(){const v=i=>$('#n'+i).value.trim();if(!v(1)||!v(2)||!/@/.test(v(3))||!v(6))return tip('Name, staff ID, a valid email and faculty are required.');if(U(v(2)))return tip('That staff ID already exists.');
- D.users.push({id:v(2),em:v(3).toLowerCase(),name:v(1),role:'Staff',title:v(5),fac:v(6),st:'Active'});D.log.unshift(`Staff account created for ${v(1)}|Just now`);S.add=0;tip('Account created. Temporary password emailed.');R()}
-function perms(){const R_=['Student','Staff','Admin'];return `<div style="display:flex;align-items:center"><div><h1>Permissions</h1><span class="mut sans">Choose what each role can do</span></div><span class="sp"></span><button class="btn p" onclick="D.log.unshift('Permissions changed|Just now');tip('Permissions saved and logged.')">Save changes</button></div>
- <div class="card" style="margin-top:14px;overflow-x:auto"><table><tr><th>Action</th>${R_.map(r=>`<th class="r">${r}</th>`).join('')}</tr>${D.P.map((p,i)=>p.length==1?`<tr><td colspan="4" class="mut" style="background:var(--sf)">${p[0]}</td></tr>`:`<tr><td>${p[0]}</td>${[1,2,3].map(k=>`<td class="r">${p[k]==='L'?'<span title="Locked" aria-label="Locked">🔒</span>':`<button class="sw ${p[k]?'on':''}" aria-label="${p[0]} for ${R_[k-1]}" onclick="D.P[${i}][${k}]=D.P[${i}][${k}]?0:1;R()"></button>`}</td>`).join('')}</tr>`).join('')}</table></div><div class="note b-in">Every permission change is recorded in the audit log. Locked switches cannot be turned off.</div>`}
-function misc(t){return t==='aud'?`<h1>Audit log</h1><div class="card">${D.log.map(l=>`<div class="row"><div class="f">${l.split('|')[0]}</div><small>${l.split('|')[1]}</small></div>`).join('')}</div>`:t==='rep'?`<h1>Reports</h1><div class="card mut">Full portfolio completion reports would live here. See the faculty bars on the dashboard for the prototype.</div>`:`<h1>My profile</h1><div class="card" style="display:flex;gap:14px;align-items:center">${av(S.u.name,'l')}<div><h3>${S.u.name}</h3><span class="mut sans">${S.u.id} · ${S.u.em}</span><br><span class="mut sans">${S.u.role}${S.u.fac?' · '+S.u.fac:''}</span><p><button class="btn s" onclick="tip('Photo upload would open here.')">Change photo</button></p></div></div>`}
-function body(){const r=S.u.role,p=S.pg;
- if(r==='Student')return p==='rec'?recView():['ach','lead','act'].includes(p)?portfolio():p==='let'?letters():p==='prof'?misc('prof'):studentDash();
- if(r==='Staff')return p==='stu'?(S.sel?studentFile():staffTable()):p==='ver'?verifyAll():p==='req'?reqAll():p==='prof'?misc('prof'):staffDash();
- return p==='usr'?users():p==='perm'?perms():p==='aud'?misc('aud'):p==='rep'?misc('rep'):p==='prof'?misc('prof'):adminDash()}
-function staffTable(){return staffDash().split('<div class="card"><h3>Needs')[0].replace(/<div style="display:flex;gap:14px[\s\S]*?<\/div><\/div>\s*<div class="g g3"[\s\S]*?<\/div><\/div><\/div>/,'')+`<h1>My students</h1>`+staffDash().match(/<div class="card"><div style="display:flex"><h3>My students[\s\S]*$/)[0]}
-function R(keep){const A=$('#app');const f=keep&&document.activeElement.id,pos=keep&&document.activeElement.selectionStart;
- if(!S.u){A.innerHTML=`<div class="top"><div class="logo"><i></i>Africa University</div><span class="sp"></span></div>${authView()}`;return}
- const nv=NAV[S.u.role],cur=S.pg==='stu'||S.pg==='dash'||nv.some(n=>n[0]===S.pg)?S.pg:S.pg;
- A.innerHTML=`<div class="top"><div class="logo"><i></i>Africa University</div>${S.u.role!=='Student'?`<span class="badge">${S.u.role==='Admin'?'Administrator':'Staff'}</span>`:''}<span class="sp"></span><span class="sans mut" style="font-size:13px">${S.u.name}</span>${av(S.u.name)}<button class="btn s" onclick="S.u=null;S.pg='';S.q='';S.add=0;R()">Log out</button></div>
- <div class="wrap"><nav aria-label="Main">${nv.map(n=>`<button class="${cur===n[0]||(n[0]==='ach'&&['lead','act'].includes(cur)&&0)?'on':''}" onclick="go('${n[0]}',{sel:null,q:'',fy:'',fs:'',add:0,tab:'${['ach','lead','act'].includes(n[0])?n[0]:S.tab}',ut:'All'})">${n[1]}</button>`).join('')}</nav><main>${body()}</main></div>`;
- if(f){const e=document.getElementById(f);if(e){e.focus();try{e.setSelectionRange(pos,pos)}catch(x){}}}}
-R();
-</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Portfolio System</title>
+  <meta name="description" content="Prototype of a student portfolio system for students, staff, supervisors and administrators.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app"></div>
+  <div id="modal-root"></div>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <div id="print-root"></div>
+  <div class="demo-bar"><button data-act="resetDemo" title="Put all sample data back how it started">Reset demo data</button></div>
+
+  <!-- Plain scripts, in this order. No build step: open this file in a browser. -->
+  <script src="js/config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/views/shell.js"></script>
+  <script src="js/views/student.js"></script>
+  <script src="js/views/staff.js"></script>
+  <script src="js/views/supervisor.js"></script>
+  <script src="js/views/admin.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
