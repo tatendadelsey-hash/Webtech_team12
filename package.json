@@ -1,0 +1,13 @@
+{
+  "name": "student-portfolio-system",
+  "version": "1.0.0",
+  "description": "Student Portfolio System for Africa University: website + Node.js backend with SQLite (no dependencies).",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "reset-db": "node server/index.js --reset",
+    "test": "node tests/api.test.js"
+  },
+  "engines": { "node": ">=22.13" },
+  "license": "MIT"
+}
