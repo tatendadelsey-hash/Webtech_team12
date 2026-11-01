@@ -1,0 +1,19 @@
+# Optional: lets Render set the site up from this file ("Blueprint"). Secret values are typed in on the Render website, never stored here.
+services:
+  - type: web
+    name: au-launchpad
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - { key: NODE_ENV, value: production }
+      - { key: NODE_VERSION, value: 22.13.0 }
+      - { key: DATABASE_URL, sync: false }
+      - { key: ADMIN_EMAIL, sync: false }
+      - { key: ADMIN_PASSWORD, sync: false }
+      - { key: ADMIN_NAME, value: Registry Office }
+      - { key: APP_URL, sync: false }
+      - { key: BREVO_API_KEY, sync: false }
+      - { key: MAIL_FROM, sync: false }
